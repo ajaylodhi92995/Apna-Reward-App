@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#059669">
+<title>Apna Reward | अपना रिवॉर्ड</title>
+<style>
+:root{--green:#059669;--green2:#10b981;--pale:#d1fae5;--bg:#f3f6f5;--ink:#17211d;--muted:#64746c;--white:#fff;--gold:#f59e0b;--line:#e3ebe7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Noto Sans Devanagari",Arial,sans-serif;color:var(--ink)}
+.app{max-width:480px;min-height:100vh;margin:auto;background:var(--bg);padding-bottom:82px;box-shadow:0 0 30px #102a1a0b}
+header{background:linear-gradient(135deg,#10b981,#047857);color:white;padding:22px 18px 24px;border-radius:0 0 24px 24px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{display:flex;align-items:center;gap:10px}.logo{width:44px;height:44px;background:#ffffff26;border:1px solid #ffffff55;border-radius:14px;display:grid;place-items:center;font-size:23px}.brand h1{font-size:21px;margin:0;line-height:1.2}.brand p{margin:3px 0 0;font-size:12px;opacity:.9}.pill{font-size:11px;background:#ffffff26;border:1px solid #ffffff55;padding:7px 10px;border-radius:30px;white-space:nowrap}
+.welcome{margin-top:24px}.welcome h2{font-size:20px;margin:0 0 5px}.welcome p{margin:0;font-size:13px;opacity:.9}
+main{padding:16px}.notice{font-size:12px;line-height:1.55;background:#fff7df;color:#76510a;border:1px solid #f5df9d;border-radius:12px;padding:11px 12px;margin-bottom:15px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat,.card{background:white;border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:0 5px 16px #173d2b08}.stat .label{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:27px;margin:5px 0 1px}.stat small{font-size:11px;color:var(--muted)}.stat .emoji{float:right;font-size:21px}
+.card{margin-top:14px}.card h3{font-size:16px;margin:0 0 7px}.sub{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 13px}.linkrow{display:flex;gap:8px;background:#f5faf7;border:1px dashed #73c9a7;padding:8px;border-radius:11px;align-items:center}.linkrow input{width:100%;min-width:0;border:0;background:transparent;font-size:12px;color:#2b4738;outline:none}.btn{border:0;border-radius:11px;padding:11px 13px;font-size:13px;font-weight:700;cursor:pointer}.btn:active{transform:scale(.98)}.btn-green{background:var(--green);color:white}.btn-soft{background:var(--pale);color:#065f46}.btn-wa{background:#16a34a;color:white}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.full{width:100%;margin-top:10px}.progressrow{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin:12px 0}.level{display:flex;align-items:center;gap:11px;padding:11px 0;border-bottom:1px solid var(--line)}.level:last-child{border-bottom:0}.levelnum{width:34px;height:34px;flex-shrink:0;border-radius:11px;background:var(--pale);color:#047857;display:grid;place-items:center;font-weight:800}.level strong{font-size:13px;display:block}.level span{font-size:11px;color:var(--muted)}.level .amount{margin-left:auto;font-size:13px;font-weight:700;color:#68776f}.tab{display:none}.tab.active{display:block}.field{display:block;width:100%;border:1px solid var(--line);background:#fbfdfc;border-radius:10px;padding:12px;font:inherit;font-size:14px;margin:8px 0 12px}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:white;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom));z-index:5}.nav{background:transparent;border:0;color:#75837c;font-size:11px;padding:5px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:65px}.nav b{font-size:20px;font-weight:500}.nav.active{color:var(--green);font-weight:800}.empty{padding:20px;text-align:center;color:var(--muted);font-size:13px}.foot{text-align:center;font-size:11px;color:var(--muted);padding:18px 6px}
+@media(min-width:481px){body{padding:18px 0}.app{border-radius:25px;overflow:hidden;min-height:calc(100vh - 36px)}.bottom{bottom:18px;border-radius:0 0 25px 25px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="top">
+    <div class="brand"><div class="logo">🎁</div><div><h1>Apna Reward</h1><p>अपना रिवॉर्ड • आमंत्रित करें और जुड़ें</p></div></div>
+    <div class="pill">प्रारंभिक संस्करण</div>
+  </div>
+  <div class="welcome"><h2 id="greeting">नमस्ते! 👋</h2><p>अपने आमंत्रण और रिवॉर्ड की जानकारी यहाँ देखें।</p></div>
+</header>
+<main>
+<section class="tab active" id="home">
+  <div class="notice"><b>डेमो सूचना:</b> इस शुरुआती संस्करण में दिखाए गए पॉइंट केवल उदाहरण हैं। अभी वास्तविक नकद भुगतान, सत्यापित रेफरल या विज्ञापन कमाई चालू नहीं है।</div>
+  <div class="stats">
+    <div class="stat"><span class="emoji">🎯</span><div class="label">कुल सफल रेफरल</div><strong id="refCount">0</strong><small>इस डेमो में दर्ज</small></div>
+    <div class="stat"><span class="emoji">⭐</span><div class="label">डेमो पॉइंट</div><strong id="points">0</strong><small>नकद राशि नहीं</small></div>
+  </div>
+  <div class="card">
+    <h3>🔗 आपका आमंत्रण लिंक</h3><p class="sub">इस लिंक को दोस्तों के साथ साझा करें। वास्तविक रेफरल की सुरक्षित गिनती के लिए बाद में सर्वर और डेटाबेस जोड़ना होगा।</p>
+    <div class="linkrow"><input id="refLink" readonly aria-label="रेफरल लिंक"><button class="btn btn-soft" id="copyBtn">कॉपी</button></div>
+    <div class="actions"><button class="btn btn-wa" id="shareBtn">WhatsApp पर भेजें</button><button class="btn btn-green" id="nativeShare">शेयर करें</button></div>
+  </div>
+  <div class="card"><h3>🎁 रिवॉर्ड योजना</h3><p class="sub">किसी भी नकद रिवॉर्ड की घोषणा करने से पहले वास्तविक आय, नियम और भुगतान की व्यवस्था तय करें।</p>
+    <div class="level"><div class="levelnum">1</div><div><strong>सीधा आमंत्रण</strong><span>भविष्य में सत्यापित कार्रवाई पर रिवॉर्ड तय किया जा सकता है</span></div><div class="amount">अभी बंद</div></div>
+    <div class="level"><div class="levelnum">2</div><div><strong>पारदर्शी नियम</strong><span>हर रिवॉर्ड की शर्तें पहले से स्पष्ट हों</span></div><div class="amount">—</div></div>
+    <div class="level"><div class="levelnum">✓</div><div><strong>कोई अग्रिम शुल्क नहीं</strong><span>यूज़र से सदस्यता या जमा राशि न लें</span></div><div class="amount">₹0</div></div>
+  </div>
+</section>
+<section class="tab" id="history">
+  <div class="card"><h3>📜 गतिविधि इतिहास</h3><p class="sub">इस डिवाइस पर स्थानीय रूप से दर्ज गतिविधियाँ। यह सूची किसी सर्वर से सत्यापित नहीं है।</p><div id="historyList" class="empty">अभी कोई गतिविधि नहीं है।</div><button class="btn btn-soft full" id="testReferral">डेमो गतिविधि जोड़ें</button></div>
+</section>
+<section class="tab" id="profile">
+  <div class="card"><h3>👤 आपकी प्रोफ़ाइल</h3><p class="sub">नाम इस डिवाइस पर सेव होगा। यह सुरक्षित लॉगिन या असली अकाउंट नहीं है।</p><label for="userName">आपका नाम</label><input class="field" id="userName" maxlength="40" placeholder="अपना नाम लिखें"><button class="btn btn-green full" id="saveName">नाम सेव करें</button><button class="btn btn-soft full" id="resetDemo">डेमो डेटा रीसेट करें</button></div>
+  <div class="card"><h3>🔐 सुरक्षा और भुगतान</h3><p class="sub">इस संस्करण में OTP, बैंक/UPI भुगतान, एडमिन पैनल या वास्तविक निकासी उपलब्ध नहीं है। इन्हें सुरक्षित बैकएंड और उचित सत्यापन के साथ अलग से बनाना होगा।</p></div>
+</section>
+<div class="foot">Apna Reward • पारदर्शी और सुरक्षित रिवॉर्ड अनुभव</div>
+</main>
+<nav class="bottom" aria-label="मुख्य नेविगेशन">
+  <button class="nav active" data-tab="home"><b>⌂</b>होम</button>
+  <button class="nav" data-tab="history"><b>◷</b>इतिहास</button>
+  <button class="nav" data-tab="profile"><b>♙</b>प्रोफ़ाइल</button>
+</nav>
+</div>
+<script>
+(function(){
+ const $=id=>document.getElementById(id);
+ const storageKey='apnaRewardDemoV1';
+ let data={name:'',points:0,referrals:0,history:[]};
+ try{const saved=JSON.parse(localStorage.getItem(storageKey)||'null');if(saved)data={...data,...saved};}catch(e){}
+ const params=new URLSearchParams(location.search);
+ const incoming=params.get('ref');
+ const myCode=getCode();
+ function getCode(){
+   let code=localStorage.getItem('apnaRewardCode');
+   if(!code){code='AR'+Math.random().toString(36).slice(2,8).toUpperCase();localStorage.setItem('apnaRewardCode',code);}
+   return code;
+ }
+ function save(){try{localStorage.setItem(storageKey,JSON.stringify(data));}catch(e){}render();}
+ function render(){
+   $('greeting').textContent=data.name?'नमस्ते, '+data.name+'! 👋':'नमस्ते! 👋';
+   $('refCount').textContent=data.referrals||0;$('points').textContent=data.points||0;
+   $('refLink').value=location.href.split('?')[0]+'?ref='+myCode;
+   $('userName').value=data.name||'';
+   $('historyList').innerHTML=data.history.length?data.history.slice().reverse().map(x=>'<div class="level"><div class="levelnum">✓</div><div><strong>'+escapeHtml(x.title)+'</strong><span>'+escapeHtml(x.date)+'</span></div><div class="amount">'+escapeHtml(x.amount)+'</div></div>').join(''):'<div class="empty">अभी कोई गतिविधि नहीं है।</div>';
+ }
+ function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+ document.querySelectorAll('.nav').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b===btn));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.id===btn.dataset.tab));window.scrollTo({top:0,behavior:'smooth'});}));
+ $('copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('refLink').value);$('copyBtn').textContent='कॉपी हो गया';}catch(e){$('refLink').focus();$('refLink').select();document.execCommand('copy');$('copyBtn').textContent='कॉपी हो गया';}setTimeout(()=>$('copyBtn').textContent='कॉपी',1800);});
+ function shareText(){return 'Apna Reward देखें: '+$('refLink').value+' — यह शुरुआती डेमो है; वास्तविक रिवॉर्ड की सुविधा अभी चालू नहीं है।';}
+ $('shareBtn').addEventListener('click',()=>{location.href='https://wa.me/?text='+encodeURIComponent(shareText());});
+ $('nativeShare').addEventListener('click',async()=>{if(navigator.share){try{await navigator.share({title:'Apna Reward',text:shareText(),url:$('refLink').value});}catch(e){}}else{try{await navigator.clipboard.writeText(shareText());alert('शेयर संदेश कॉपी हो गया।');}catch(e){alert(shareText());}}});
+ $('saveName').addEventListener('click',()=>{data.name=$('userName').value.trim().slice(0,40);save();alert('नाम इस डिवाइस पर सेव हो गया।');});
+ $('testReferral').addEventListener('click',()=>{data.history.push({title:'डेमो गतिविधि (वास्तविक रेफरल नहीं)',date:new Date().toLocaleString('hi-IN'),amount:'+0 पॉइंट'});save();});
+ $('resetDemo').addEventListener('click',()=>{if(confirm('क्या आप इस डिवाइस का डेमो डेटा मिटाना चाहते हैं?')){data={name:'',points:0,referrals:0,history:[]};save();}});
+ // Referral query is displayed as attribution only; it does not award points or count a referral.
+ if(incoming && incoming!==myCode && !sessionStorage.getItem('apnaRefSeen')){sessionStorage.setItem('apnaRefSeen','1');}
+ render();
+})();
+</script>
+</body>
+</html>
